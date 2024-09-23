@@ -1,11 +1,17 @@
 # PCIe-NPL54-Public
 - Please ask your sales representative for the unzip password.
 
+```
+## 1st time installation
+sudo ./00_install_es1.sh 
 
-# 
+## everytime after reboot
+sudo ./01_prepare_es1.sh
+
+##
+./02_run_ffplay_es1.sh
+
 ```
-VIDEO_ID=/dev/video1
-gst-launch-1.0 v4l2src device=$VIDEO_ID ! videoconvert ! videoscale ! video/x-raw,format=RGB ! queue ! videoconvert ! fpsdisplaysink name=fps video-sink=xvimagesink
-gst-launch-1.0 v4l2src device=$VIDEO_ID ! videoconvert ! videoscale ! video/x-raw,format=RGB ! queue ! videoconvert ! xvimagesink
-```
+
+
 
