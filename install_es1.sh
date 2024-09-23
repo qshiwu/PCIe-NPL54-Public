@@ -17,13 +17,6 @@ echo "Please ensure that you are connected to the Internet."
 echo "Please contact the sales representative for the password."
 sleep 5
 
-
-DESKTOP=/home/$SUDO_USER/Desktop/
-cp pcie-npl54-es1.zip $DESKTOP
-cd $DESKTOP
-unzip pcie-npl54-es1.zip
-sudo chown -R $SUDO_USER PCIe-NPL54-ES1
-
 # ssh
 sudo apt-get update
 sudo apt-get install -y openssh-server
@@ -45,7 +38,22 @@ sudo apt-get install -y libasound2-dev
 # ffplay
 sudo apt-get install -y ffmpeg
 
-## GStreamer with plugins
+# GStreamer with plugins
 sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio 
 
+# FPGA kernel modules
+INSTALL_FOLDER=/home/$SUDO_USER/Desktop/PCIe-NPL54
+mkdir -p $INSTALL_FOLDER
+cp pcie-npl54-es1.zip $INSTALL_FOLDER
+cd $INSTALL_FOLDER
+unzip pcie-npl54-es1.zip
 
+cd $INSTALL_FOLDER/PCIe-NPL54-ES1/lscvdma
+make clean
+make 
+
+cd $INSTALL_FOLDER/PCIe-NPL54-ES1/v4l2loopback
+make clean
+make
+
+sudo chown -R $SUDO_USER $INSTALL_FOLDER
