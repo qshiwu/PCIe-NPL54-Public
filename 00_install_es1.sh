@@ -35,7 +35,11 @@ sudo apt-get install -y make gcc g++
 sudo apt-get install -y libglfw3-dev mesa-utils libglew-dev
 sudo dpkg --configure -a
 sudo apt-get install -y libasound2-dev
+
+# Skipping BTF generation xxx. due to unavailability of vmlinux
+# https://askubuntu.com/questions/1348250/skipping-btf-generation-xxx-due-to-unavailability-of-vmlinux-on-ubuntu-21-04
 sudo apt-get install dwarves
+sudo cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
 
 # ffplay
 sudo apt-get install -y ffmpeg
