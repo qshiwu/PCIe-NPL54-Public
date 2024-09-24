@@ -1,1 +1,0 @@
-cmd_/home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/modules.order := {   echo /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/lscvdma.ko; :; } | awk '!x[$$0]++' - > /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/modules.order

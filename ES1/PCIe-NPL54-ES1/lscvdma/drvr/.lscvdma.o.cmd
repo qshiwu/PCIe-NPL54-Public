@@ -1,1 +1,0 @@
-cmd_/home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/lscvdma.o := ld -m elf_x86_64 -z noexecstack   -r -o /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/lscvdma.o /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/vdma.o

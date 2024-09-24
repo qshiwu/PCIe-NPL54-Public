@@ -1,1 +1,0 @@
-cmd_/home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/Module.symvers := sed 's/\.ko$$/\.o/' /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/modules.order | scripts/mod/modpost -m -a  -o /home/dvt/Desktop/PCIe-NPL54-Public/ES1/PCIe-NPL54-ES1/lscvdma/drvr/Module.symvers -e -i Module.symvers   -T -
