@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-echo "█████╗  ██████╗██╗███████╗    ███╗   ██╗██████╗ ██╗     ███████╗██╗  ██╗"
+echo "█████╗   ██████╗██╗███████╗    ███╗   ██╗██████╗ ██╗     ███████╗██╗  ██╗"
 echo "██╔══██╗██╔════╝██║██╔════╝    ████╗  ██║██╔══██╗██║     ██╔════╝██║  ██║"
 echo "██████╔╝██║     ██║█████╗█████╗██╔██╗ ██║██████╔╝██║     ███████╗███████║"
 echo "██╔═══╝ ██║     ██║██╔══╝╚════╝██║╚██╗██║██╔═══╝ ██║     ╚════██║╚════██║"
@@ -49,23 +49,22 @@ sudo apt-get install -y ffmpeg
 sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio 
 
 clear 
-echo "Please contact the sales representative for the password."
-sleep 3
+echo "Compile kernel module."
+sleep 2
 # FPGA kernel modules
-INSTALL_FOLDER=$(pwd)/ES2
-mkdir -p $INSTALL_FOLDER
-cp NPL54_ES2.zip $INSTALL_FOLDER
+INSTALL_FOLDER=$(pwd)
 cd $INSTALL_FOLDER
-unzip NPL54_ES2.zip
-
-cd $INSTALL_FOLDER/NPL54_ES2
 make clean
 make 
 
 # https://github.com/umlaeute/v4l2loopback/issues/382
 # Enable automatic module loading for v4l2loopback
 # (write v4l2loopback into /etc/modules-load.d/v4l2loopback.conf )
-cd $INSTALL_FOLDER/NPL54_ES2/v4l2loopback
+echo ""
+echo ""
+echo "Compile v4l2loopback module."
+sleep 2
+cd $INSTALL_FOLDER/v4l2loopback
 sudo make clean
 sudo make KCPPFLAGS="-DMAX_DEVICES=100" install-all
 make
