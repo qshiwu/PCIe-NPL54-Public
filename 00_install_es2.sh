@@ -31,7 +31,7 @@ sudo apt-get install -y net-tools
 sudo apt-get install -y git
 
 # compile tools
-sudo apt-get install -y make gcc g++
+sudo apt-get install -y make gcc g++ g++-12
 sudo apt-get install -y libglfw3-dev mesa-utils libglew-dev
 sudo dpkg --configure -a
 sudo apt-get install -y libasound2-dev
