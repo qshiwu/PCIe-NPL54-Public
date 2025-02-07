@@ -30,6 +30,9 @@ sudo apt-get install -y net-tools
 # git
 sudo apt-get install -y git
 
+# xdotool
+sudo apt-get install -y xdotool
+
 # compile tools
 sudo apt-get install -y make gcc g++ g++-12
 sudo apt-get install -y libglfw3-dev mesa-utils libglew-dev
