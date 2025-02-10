@@ -45,6 +45,12 @@ sudo apt-get install help2man
 sudo apt-get install -y dwarves
 sudo cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
 
+# add script to run in shutdown
+sudo cp app/NPL54Capture/script/shutdown-script.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sleep 1
+sudo systemctl enable shutdown-script.service
+
 # ffplay
 sudo apt-get install -y ffmpeg
 
