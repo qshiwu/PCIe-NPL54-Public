@@ -47,16 +47,16 @@ sudo cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
 
 # add script to run at start and shutdown
 sudo systemctl disable npl54-start-stop-script.service
+sudo systemctl stop npl54-start-stop-script.service
 sudo rm /usr/local/bin/npl54-start.sh
 sudo rm /usr/local/bin/npl54-shutdown.sh
 sudo rm /etc/systemd/system/npl54-start-stop-script.service
 sudo systemctl daemon-reload
-
-sudo cp app/NPL54Capture/script/npl54-start.sh /usr/local/bin/
-sudo cp app/NPL54Capture/script/npl54-shutdown.sh /usr/local/bin/
-sudo cp app/NPL54Capture/script/npl54-start-stop-script.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable npl54-start-stop-script.service --now
+#sudo cp app/NPL54Capture/script/npl54-start.sh /usr/local/bin/
+#sudo cp app/NPL54Capture/script/npl54-shutdown.sh /usr/local/bin/
+#sudo cp app/NPL54Capture/script/npl54-start-stop-script.service /etc/systemd/system/
+#sudo systemctl daemon-reload
+#sudo systemctl enable npl54-start-stop-script.service --now
 
 # ffplay
 sudo apt-get install -y ffmpeg
